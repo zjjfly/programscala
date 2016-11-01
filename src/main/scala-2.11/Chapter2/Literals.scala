@@ -17,17 +17,22 @@ object Literals {
     println(s1)
     //如果想要去掉前缀和后缀,可以使用下面这种方法,但只去掉整个字符串的首尾,不是单独每一行的
     val s2 =
-      """xxxGoodbye, Scalayyy
+    """xxxGoodbye, Scalayyy
         xxxCome again!yyy""".stripPrefix("xxx").stripSuffix("yyy")
     println(s2)
-    val i='id
+    val i = 'id
     println(i)
     //这种方法生成Symbol只能包含数字,字母或下划线,不能有空格,且第一个字符不能是数字
     //想要没有上面这些限制,使用Symbol.apply方法
     val symbol: Symbol = Symbol("1 id")
     println(symbol)
 
-    val (t1,t2,t3)=(1,2,3)
-    println( t1 + ", " + t2 + ", " + t3 )
+    //tuple
+    val (t1, t2, t3) = (1, 2, 3)
+    println(t1 + ", " + t2 + ", " + t3)
+    //有一些便利的定义两个元素的tuple
+    println(1 -> "one")
+    println(1 → "one")
+
   }
 }
