@@ -24,7 +24,8 @@ object TryCatch {
       case NonFatal(ex) => println(s"Non fatal exception! $ex") //
     } finally {
       for (s <- source) {
-        //
+        //这是一种常用的对Option对象进行操作的方法
+        //for句式只有当Option中有值的时候才会执行后面语句块
         println(s"Closing $fileName...")
         s.close
       }
