@@ -27,6 +27,6 @@ object Test{
   implicit val obj=IntMarker
   def main(args: Array[String]): Unit = {
     M.m(Seq(1,2))
-    M.m(Seq("1","2"))
+//    M.m(Seq("1","2"))
   }
 }
