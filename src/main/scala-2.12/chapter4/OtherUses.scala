@@ -14,7 +14,6 @@ object OtherUses {
     val head1 +: head2 +: tails = Vector(1, 2, 3)
     println(head1 + "," + head2 + "," + tail)
     val Seq(a, b, c) = List(1, 2, 3)
-    println(a, b, c)
     val p = Person("Dean", 29, Address("1 Scala Way", "CA", "USA"))
     val re = if (p == Person("Dean", 29,
       Address("1 Scala Way", "CA", "USA"))) "yes"

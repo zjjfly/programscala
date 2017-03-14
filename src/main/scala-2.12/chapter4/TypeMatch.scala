@@ -5,13 +5,13 @@ package chapter4
   */
 object TypeMatch {
   def main(args: Array[String]): Unit = {
-    val tuples1: Seq[(String, List[Any])] = for {
-      x <- Seq(List(5.5, 5.6, 5.7), List("a", "b"))} yield x match {
-      case seqd: Seq[Double] => ("seq double", seqd)
-      case seqs: Seq[String] => ("seq string", seqs)
-      case _ => ("unknown!", x)
-    }
-    println(tuples1)
+//    val tuples1: Seq[(String, List[Any])] = for {
+//      x <- Seq(List(5.5, 5.6, 5.7), List("a", "b"))} yield x match {
+//      case seqd: Seq[Double] => ("seq double", seqd)
+//      case seqs: Seq[String] => ("seq string", seqs)
+//      case _ => ("unknown!", x)
+//    }
+//    println(tuples1)
 
     //上面的代码会在编译的时候有警告,而且结果是两个都被认为是seq double
     //原始是jvm的类型擦除机制,使得第二个case成了unreachable
