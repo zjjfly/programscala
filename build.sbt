@@ -10,4 +10,5 @@ libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.1"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"//最后的test表示scope，说明只在测试代码中使用
 //scalacOptions +="-Xlint"
 scalacOptions +="-language:reflectiveCalls"
+scalacOptions +="-language:implicitConversions"
 scalacOptions +="-feature"
