@@ -8,9 +8,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_akka_akka_actor_2_11_2_4_8_jar.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__com_typesafe_config_1_3_0_jar.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/SBT__org_scala_lang_modules_scala_java8_compat_2_11_0_7_0_jar.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/programscala-build.iml" afterPath="" />
@@ -95,21 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ImplicitConversionResolution.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala-2.12/chapter5/ImplicitConversionResolution.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="40">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -243,20 +231,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ProgramScala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgramScala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgramScala" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -865,7 +839,7 @@
       <workItem from="1489328190157" duration="3922000" />
       <workItem from="1489394558824" duration="10761000" />
       <workItem from="1489421343029" duration="6539000" />
-      <workItem from="1489484738389" duration="1327000" />
+      <workItem from="1489484738389" duration="1456000" />
     </task>
     <task id="LOCAL-00001" summary="ch03 finished">
       <created>1479866776861</created>
@@ -958,7 +932,21 @@
       <option name="project" value="LOCAL" />
       <updated>1489486041982</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="-删除idea">
+      <created>1489486151298</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1489486151298</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修改ignore">
+      <created>1489486222462</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1489486222462</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -973,7 +961,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92614000" />
+    <option name="totallyTimeSpent" value="92743000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1110,6 +1098,7 @@
     <MESSAGE value="-注释掉问题代码，使sbt编译可以通过&#10;+虚类型相关代码" />
     <MESSAGE value="删除.idea&#10;" />
     <MESSAGE value="-删除.idea&#10;+隐式转换方法查找规则" />
+    <MESSAGE value="-删除idea" />
     <MESSAGE value="修改ignore" />
     <option name="LAST_COMMIT_MESSAGE" value="修改ignore" />
   </component>
@@ -1483,8 +1472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="40">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>
