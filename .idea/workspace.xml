@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef115a44-45b3-4718-b14b-d182f1ac9e69" name="Default" comment="">
+    <list default="true" id="ef115a44-45b3-4718-b14b-d182f1ac9e69" name="Default" comment="-忽略.idea中的文件">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala-2.12/chapter5/CustomStringInterpolator.scala" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala-2.12/chapter5/Factorial.scala" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala-2.12/chapter5/Trampoline.scala" />
@@ -103,8 +103,8 @@
       <file leaf-file-name="build.sbt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="288">
+              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -181,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter5/PhantomTypePipline.scala" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter4/OtherUses.scala" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter4/Test.scala" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter5/ImplicitConversionResolution.scala" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter5/ImplicitErasure.scala" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/Chapter1/Shapes.scala" />
@@ -196,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter5/test.sc" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter5/Test.java" />
         <option value="$PROJECT_DIR$/src/main/scala-2.12/chapter5/Test2.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -436,6 +436,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProgramScala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProgramScala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -456,7 +470,7 @@
     <property name="SearchEverywhereHistoryKey" value="plug&#9;ACTION&#9;FindBugs.GutterPoup&#10;JavaConve&#9;null&#9;null&#10;dm&#9;ACTION&#9;ToggleDistractionFreeMode&#10;sbt&#9;ACTION&#9;ActivateSBTToolWindow&#10;pm&#9;ACTION&#9;TogglePresentationMode&#10;test rest&#9;ACTION&#9;WebServicesPlugin.CreateRESTClient&#10;StringBul&#9;null&#9;null&#10;!&#9;null&#9;null&#10;=:=&#9;null&#9;null&#10;&lt;:&lt;&#9;null&#9;null&#10;implicitly&#9;null&#9;null&#10;+:&#9;null&#9;null&#10;:+&#9;null&#9;null&#10;List&#9;FILE&#9;jar:///Users/zjjfly/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/immutable/List.scala&#10;tra&#9;FILE&#9;jar:///Users/zjjfly/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/TraversableLike.scala&#10;Seq&#9;FILE&#9;jar:///Users/zjjfly/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.8-sources.jar!/scala/collection/immutable/Seq.scala" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="/usr/local/lib/node_modules/eslint" />
-    <property name="add_unversioned_files" value="true" />
+    <property name="add_unversioned_files" value="true&#10;/Users/zjjfly/idea works/ProgramScala/.idea/workspace.xml" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="FullScreen" value="true" />
   </component>
@@ -1070,7 +1084,7 @@
       <workItem from="1490195960175" duration="2016000" />
       <workItem from="1490198299403" duration="1827000" />
       <workItem from="1490241421490" duration="126000" />
-      <workItem from="1490241568765" duration="1258000" />
+      <workItem from="1490241568765" duration="1446000" />
     </task>
     <task id="LOCAL-00001" summary="ch03 finished">
       <created>1479866776861</created>
@@ -1184,7 +1198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489486261661</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="-忽略.idea中的文件">
+      <created>1490242892453</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1490242892453</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1199,7 +1220,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129247000" />
+    <option name="totallyTimeSpent" value="129435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1212,7 +1233,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1230,7 +1250,7 @@
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273165" sideWeight="0.489255" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31733525" sideWeight="0.49578822" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31733525" sideWeight="0.49578822" order="0" side_tool="false" content_ui="combo" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4921781" order="1" side_tool="false" content_ui="tabs" />
@@ -1345,7 +1365,8 @@
     <MESSAGE value="-删除.idea&#10;+隐式转换方法查找规则" />
     <MESSAGE value="-删除idea" />
     <MESSAGE value="修改ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改ignore" />
+    <MESSAGE value="-忽略.idea中的文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="-忽略.idea中的文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1361,20 +1382,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/generic/SeqFactory.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala-2.12/chapter4/TypeMatch.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala-2.12/chapter5/ScalaDataApi.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
@@ -1704,10 +1711,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="288">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding />
         </state>
       </provider>
