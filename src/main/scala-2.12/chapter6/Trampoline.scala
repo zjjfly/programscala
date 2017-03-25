@@ -1,10 +1,10 @@
-package chapter5
+package chapter6
 
 /**
   * 蹦床
   * Created by zjjfly on 2017/3/22.
   */
-object Trampoline {
+object Trampoline extends App {
 
   import scala.util.control.TailCalls._
 
@@ -18,11 +18,9 @@ object Trampoline {
     else tailcall(isEven(xs.tail))
   }
 
-  def main(args: Array[String]): Unit = {
-    for (elem <- 1 to 5) {
-      val even=isEven(1 to elem toList).result
-      println(s"$elem is even?${even}")
-    }
+  for (elem <- 1 to 5) {
+    val even = isEven(1 to elem toList).result
+    assert(even == (elem % 2 == 0))
   }
 
 }
