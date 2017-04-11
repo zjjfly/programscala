@@ -11,7 +11,7 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test" //ÊúÄÂê
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.6.0-M1"
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.2.10"
 
-//scalacOptions +="-Xlint"
+scalacOptions +="-Xlint"
 scalacOptions += "-language:reflectiveCalls"
 scalacOptions += "-language:implicitConversions"
 scalacOptions += "-language:postfixOps"
