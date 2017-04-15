@@ -6,7 +6,7 @@ package chapter8
 object UniversalTrait extends App {
 
   trait Digitizer extends Any {
-    def digits(s: String) = s.replaceAll("\\D", "")
+    def digits(s: String): String = s.replaceAll("\\D", "")
   }
 
   trait Formatter extends Any {

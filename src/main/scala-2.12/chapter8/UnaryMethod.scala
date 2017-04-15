@@ -17,6 +17,6 @@ object UnaryMethod extends App {
   val c3 = c1.unary_-
   assert(c3==c2)
   val c4 = c1 - Complex(0.5, 1.0)
-  println(s"c4 = ${c4}")
+  println(s"c4 = $c4")
   assert(c4==Complex(0.6,1.2))
 }

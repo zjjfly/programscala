@@ -1,7 +1,5 @@
 package chapter8
 
-import scala.collection.immutable.HashMap
-
 /**
   * Created by zjjfly on 2017/4/15.
   */

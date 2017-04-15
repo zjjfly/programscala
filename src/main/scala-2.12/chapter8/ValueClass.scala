@@ -12,7 +12,7 @@ object ValueClass extends App {
 
   //参数不一定要是Scala的值类型，也可以是引用类型
   class USPhoneNumber(val s: String) extends AnyVal {
-    override def toString = {
+    override def toString: String = {
       val digs = digits(s)
       val areaCode = digs.substring(0, 3)
       val exchange = digs.substring(3, 6)
