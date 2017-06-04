@@ -10,5 +10,5 @@ object CanBuildFrom extends App {
   val treeSet = set map (_.toString)
   assert(treeSet.isInstanceOf[TreeSet[Int]])
   val indexSeq = "xyz" map (_.toInt)
-  assert(indexSeq.isInstanceOf[Vector[Char]])
+  assert(indexSeq.isInstanceOf[Vector[_]])
 }

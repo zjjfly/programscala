@@ -3,3 +3,4 @@ target/
 /.idea/
 /*.txt
 /akka.log
+/sammich.xml
