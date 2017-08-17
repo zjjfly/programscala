@@ -10,13 +10,13 @@ import scala.concurrent.duration.Duration
 object AsyncAwait {
   def recordExists(id: Long): Boolean = {
     println(s"recordExists($id)...")
-    Thread.sleep(1)
+    Thread.sleep(1000)
     id > 0
   }
 
   def getRecord(id: Long): (Long, String) = {
     println(s"getRecord($id)...")
-    Thread.sleep(1)
+    Thread.sleep(1000)
     (id, s"record: $id")
   }
 
@@ -30,7 +30,6 @@ object AsyncAwait {
     (-1 to 1) foreach  {i=>
       val f=AsyncAwait.asyncGetRecord(i)
       val result = Await.result(f, Duration.Inf)
-      println(result)
     }
   }
 }
