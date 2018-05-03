@@ -20,15 +20,15 @@ object AsyncAwait {
     (id, s"record: $id")
   }
 
-  def asyncGetRecord(id:Long)=async{
-    val exists=async{val b=recordExists(id); println(b);b}
-    if(await(exists)) await(async{val r=getRecord(id); println(r);r})
-    else (id,"Record not found")
+  def asyncGetRecord(id: Long) = async {
+    val exists = async { val b = recordExists(id); println(b); b }
+    if (await(exists)) await(async { val r = getRecord(id); println(r); r })
+    else (id, "Record not found")
   }
 
   def main(args: Array[String]): Unit = {
-    (-1 to 1) foreach  {i=>
-      val f=AsyncAwait.asyncGetRecord(i)
+    (-1 to 1) foreach { i =>
+      val f = AsyncAwait.asyncGetRecord(i)
       val result = Await.result(f, Duration.Inf)
     }
   }

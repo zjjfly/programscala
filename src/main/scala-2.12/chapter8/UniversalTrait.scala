@@ -14,7 +14,10 @@ object UniversalTrait extends App {
       s"($areaCode) $exchange-$subnumber"
   }
 
-  class USPhoneNumber(val s: String) extends AnyVal with Digitizer with Formatter {
+  class USPhoneNumber(val s: String)
+      extends AnyVal
+      with Digitizer
+      with Formatter {
     override def toString: String = {
       val digs = digits(s)
       val areaCode = digs.substring(0, 3)
@@ -28,4 +31,3 @@ object UniversalTrait extends App {
   println(number)
 
 }
-

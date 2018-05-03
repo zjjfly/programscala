@@ -19,7 +19,8 @@ object TypeLambda extends App {
       def map2[B](f: A => B): Option[B] = opt map f
     }
 
-    implicit class MapFunctor[K, V1](mapKV1: Map[K, V1]) extends Functor[V1, ({type λ[α] = Map[K, α]})#λ] {
+    implicit class MapFunctor[K, V1](mapKV1: Map[K, V1])
+        extends Functor[V1, ({ type λ[α] = Map[K, α] })#λ] {
       override def map2[B](f: (V1) => B): Map[K, B] = mapKV1 map {
         case (k, v) => (k, f(v))
       }

@@ -1,13 +1,12 @@
 package Chapter3
 
-
 /**
   * Created by zjjfly on 2016/11/21.
   */
 object Enum {
   def main(args: Array[String]): Unit = {
     println("ID\treed")
-    for(breed<-Breed.values) println(s"${breed.id}\t$breed")
+    for (breed <- Breed.values) println(s"${breed.id}\t$breed")
     println("\nJust Terriers:")
     Breed.values filter (_.toString.endsWith("Terrier")) foreach println
     println("\nTerriers Again??")
@@ -17,7 +16,7 @@ object Enum {
   import Breed._
   def isTerrier(b: Breed) = b.toString.endsWith("Terrier")
   import WeekDay._
-  def isworkingDay(d:WeekDay) = ! (d == Sat||d == Sun)
+  def isworkingDay(d: WeekDay) = !(d == Sat || d == Sun)
 }
 //scala的枚举通过继承Enumeration实现
 //但其实scala很少使用这个特性,更多的使用case class来替代

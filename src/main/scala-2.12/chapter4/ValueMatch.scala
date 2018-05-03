@@ -10,11 +10,11 @@ object ValueMatch {
       x <- Seq(1, 2, 2.7, "one", "two", 'four)
     } {
       val str = x match {
-          //同时匹配多个条件
+        //同时匹配多个条件
         case _: Int | _: Double => "a number: " + x
-        case "one" => "string one"
-        case _: String => "other string: " + x
-        case _ => "unexpected value: " + x
+        case "one"              => "string one"
+        case _: String          => "other string: " + x
+        case _                  => "unexpected value: " + x
       }
       println(str)
     }
@@ -26,7 +26,7 @@ object ValueMatch {
     } {
       val str = x match {
         //模式匹配中要引用之前的变量,需要把变量名用反引号包起来
-        case `y` => "found y!"
+        case `y`    => "found y!"
         case i: Int => "int:" + i
       }
       println(str)

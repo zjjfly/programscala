@@ -12,9 +12,9 @@ object AkkaClient {
   private var system: Option[ActorSystem] = None
 
   private def processArg(args: Seq[String]): Unit = args match {
-    case Nil =>
+    case Nil                       =>
     case ("--help" | "-h") +: tail => exit(help, 0)
-    case head +: tail => exit(s"Unknown input $head!\n" + help, 1)
+    case head +: tail              => exit(s"Unknown input $head!\n" + help, 1)
   }
 
   private val help = // <19>
@@ -41,13 +41,13 @@ object AkkaClient {
     val sys = ActorSystem("AkkaClient")
     system = Some(sys)
     val numberOfWorkers = sys.settings.config.getInt("server.number-workers")
-    val server =ServerActor.make(sys)
+    val server = ServerActor.make(sys)
     server ! Start(numberOfWorkers)
     processInput(server)
   }
 
   private def processInput(server: ActorRef): Unit = {
-    val blankRE ="""^\s*#?\s*$""".r
+    val blankRE = """^\s*#?\s*$""".r
     val badCrashRE = """^\s*[Cc][Rr][Aa][Ss][Hh]\s*$""".r
     val crashRE = """^\s*[Cc][Rr][Aa][Ss][Hh]\s+(\d+)\s*$""".r
     val dumpRE = """^\s*[Dd][Uu][Mm][Pp](\s+\d+)?\s*$""".r
@@ -56,41 +56,47 @@ object AkkaClient {
 
     def prompt() = print(">> ")
 
-    def missingActorNumber() = println("Crash command requires an actor number.")
+    def missingActorNumber() =
+      println("Crash command requires an actor number.")
 
     def invalidInput(s: String) = println(s"Unrecognized command: $s")
 
-    def invalidCommand(c: String): Unit = println(s"Expected 'c', 'r', 'u', or 'd'. Got $c")
+    def invalidCommand(c: String): Unit =
+      println(s"Expected 'c', 'r', 'u', or 'd'. Got $c")
 
-    def expectedString(): Unit = println("Expected a string after the command and number")
+    def expectedString(): Unit =
+      println("Expected a string after the command and number")
 
-    def unexpectedString(c: String, n: Int): Unit = println(s"Extra arguments after command and number '$c $n'")
+    def unexpectedString(c: String, n: Int): Unit =
+      println(s"Extra arguments after command and number '$c $n'")
 
     def finished(): Nothing = exit("Goodbye!", 0)
 
     val handleLine: PartialFunction[String, Unit] = {
-      case blankRE() =>
+      case blankRE()    =>
       case "h" | "help" => println(help)
       case dumpRE(n) => //
         server ! (if (n == null) DumpAll else Dump(n.trim.toInt))
       case badCrashRE() => missingActorNumber()
-      case crashRE(n) => server ! Crash(n.toInt)
-      case charNumberStringRE(c, n, s) => c match {
-        case "c" | "C" => server ! Create(n.toInt, s)
-        case "u" | "U" => server ! Update(n.toInt, s)
-        case "r" | "R" => unexpectedString(c, n.toInt)
-        case "d" | "D" => unexpectedString(c, n.toInt)
-        case _ => invalidCommand(c)
-      }
-      case charNumberRE(c, n) => c match {
-        case "r" | "R" => server ! Read(n.toInt)
-        case "d" | "D" => server ! Delete(n.toInt)
-        case "c" | "C" => expectedString()
-        case "u" | "U" => expectedString()
-        case _ => invalidCommand(c)
-      }
+      case crashRE(n)   => server ! Crash(n.toInt)
+      case charNumberStringRE(c, n, s) =>
+        c match {
+          case "c" | "C" => server ! Create(n.toInt, s)
+          case "u" | "U" => server ! Update(n.toInt, s)
+          case "r" | "R" => unexpectedString(c, n.toInt)
+          case "d" | "D" => unexpectedString(c, n.toInt)
+          case _         => invalidCommand(c)
+        }
+      case charNumberRE(c, n) =>
+        c match {
+          case "r" | "R" => server ! Read(n.toInt)
+          case "d" | "D" => server ! Delete(n.toInt)
+          case "c" | "C" => expectedString()
+          case "u" | "U" => expectedString()
+          case _         => invalidCommand(c)
+        }
       case "q" | "quit" | "exit" => finished()
-      case string => invalidInput(string)
+      case string                => invalidInput(string)
     }
     while (true) {
       prompt()

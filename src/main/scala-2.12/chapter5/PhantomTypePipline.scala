@@ -32,6 +32,6 @@ object CalculatePayroll2 {
     println(
       f"  $$${twoWeekGross}%.2f vs.$$${twoWeekNet}%.2f or ${percent}%.1f%%"
     )
-    val (a,b)=(1,2)
+    val (a, b) = (1, 2)
   }
 }

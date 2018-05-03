@@ -25,7 +25,8 @@ class ClickCountObserver extends Observer[Clickable] {
 }
 
 object VetoableClick extends App {
-  val button = new Button("Click Me!") with ObservableClicks with VetoableClicks {
+  val button = new Button("Click Me!") with ObservableClicks
+  with VetoableClicks {
     override val maxAllowed = 2
   }
   val bco1 = new ClickCountObserver
@@ -36,5 +37,4 @@ object VetoableClick extends App {
   assert(bco1.count == 2, s"bco1.count ${bco1.count} != 2")
   assert(bco2.count == 2, s"bco2.count ${bco2.count} != 2")
   println("Success!")
-
 }

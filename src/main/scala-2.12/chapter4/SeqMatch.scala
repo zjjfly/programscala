@@ -14,42 +14,48 @@ object SeqMatch {
     val emptyVector = Vector.empty[Int]
     val nonEmptyMap = Map("one" -> 1, "two" -> 2, "three" -> 3)
     val emptyMap = Map.empty[String, Int]
-    for (seq <- Seq(nonEmptySeq, nonEmptyList,
-      nonEmptyVector, nonEmptyMap.toSeq)) {
+    for (seq <- Seq(nonEmptySeq,
+                    nonEmptyList,
+                    nonEmptyVector,
+                    nonEmptyMap.toSeq)) {
       println(seqToString(seq))
     }
     println()
-    for (seq <- Seq(nonEmptySeq, nonEmptyList,
-      nonEmptyVector, nonEmptyMap.toSeq)) {
+    for (seq <- Seq(nonEmptySeq,
+                    nonEmptyList,
+                    nonEmptyVector,
+                    nonEmptyMap.toSeq)) {
       println(reverseSeqToString(seq))
     }
     println()
-    for (seq <- Seq(nonEmptySeq, nonEmptyList,
-      nonEmptyVector, nonEmptyMap.toSeq)) {
+    for (seq <- Seq(nonEmptySeq,
+                    nonEmptyList,
+                    nonEmptyVector,
+                    nonEmptyMap.toSeq)) {
       println(windows(seq))
     }
     //windows函数的功能如此常用,所以scala提供了sliding方法
     println(nonEmptyList.sliding(2).toList)
-    println(nonEmptyList.sliding(3,2).toList)
+    println(nonEmptyList.sliding(3, 2).toList)
 
     //匹配可变参数
-    val whereIn=WhereIn("stat","IL","CA","VA")
+    val whereIn = WhereIn("stat", "IL", "CA", "VA")
     whereIn match {
-        //这个@实际作用是把_*绑定到vals变量
-      case WhereIn(col,val1,vals @ _*)=>
+      //这个@实际作用是把_*绑定到vals变量
+      case WhereIn(col, val1, vals @ _*) =>
         println(s"Where $col in (${(val1 +: vals) mkString ","})")
-      case _=>println (s"ERROR: Unknown expression: $whereIn")
+      case _ => println(s"ERROR: Unknown expression: $whereIn")
     }
   }
 
   def seqToString[T](seq: Seq[T]): String = seq match {
     case head +: tail => s"$head +: " + seqToString(tail)
-    case Nil => "Nil"
+    case Nil          => "Nil"
   }
 
   def reverseSeqToString[T](seq: Seq[T]): String = seq match {
     case init :+ last => reverseSeqToString(init) + s" :+ $last"
-    case Nil => "Nil"
+    case Nil          => "Nil"
   }
 
   def windows[T](seq: Seq[T]): String = seq match {

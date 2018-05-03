@@ -4,6 +4,7 @@ package chapter7
   * Created by zjjfly on 2017/3/31.
   */
 object RemoveBlanks {
+
   /**
     * Remove blank lines from the specified input file.
     */
@@ -11,7 +12,7 @@ object RemoveBlanks {
     for {
       line <- scala.io.Source.fromFile(path).getLines.toSeq //
       if !line.matches("""^\s*$""") //
-      line2 = if (compressWhiteSpace) line replaceAll("\\s+", " ") //
+      line2 = if (compressWhiteSpace) line replaceAll ("\\s+", " ") //
       else line
     } yield line2
 

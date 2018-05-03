@@ -6,8 +6,7 @@ package chapter7
 object Option extends App {
 
   val results: Seq[Option[Int]] = Vector(Some(10), None, Some(20))
-  val results2 = for {Some(i) <- results
-  } yield 2 * i
+  val results2 = for { Some(i) <- results } yield 2 * i
   assert(results2 == Vector(20, 40))
 
   def positive(i: Int): Option[Int] = if (i > 0) Some(i) else None

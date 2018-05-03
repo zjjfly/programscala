@@ -11,11 +11,10 @@ object SingletonType extends App {
   val l11: s11.Logger = s11.logger
   //val l11: s12.Logger = s11.logger
 
-  def printFoo(foo:Foo.type)= println(foo)
+  def printFoo(foo: Foo.type) = println(foo)
   printFoo(Foo)
 }
 
 case object Foo {
   override def toString: String = "Foo says Hello!"
 }
-

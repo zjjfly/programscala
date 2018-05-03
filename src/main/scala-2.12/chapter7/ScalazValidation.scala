@@ -1,6 +1,6 @@
 package chapter7
 
-import scalaz._,std.AllInstances._
+import scalaz._, std.AllInstances._
 
 /**
   * Created by zjjfly on 2017/4/8.
@@ -30,6 +30,8 @@ object ScalazValidation extends App {
   val result3 = positive(5) +++ positive(10) +++ positive(25)
   assert(result3 == Success(40))
   val result4 = positive(-1) +++ positive(10) +++ positive(-5)
-  assert(result4 == Failure(List("Nonpositive integer -1","Nonpositive integer -5")))
+  assert(
+    result4 == Failure(
+      List("Nonpositive integer -1", "Nonpositive integer -5")))
 
 }

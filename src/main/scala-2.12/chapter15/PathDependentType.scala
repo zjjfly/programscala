@@ -1,7 +1,5 @@
 package chapter15
 
-import chapter15.PathDependentType.s1
-
 /**
   * Created by zjjfly on 2017/5/25.
   */

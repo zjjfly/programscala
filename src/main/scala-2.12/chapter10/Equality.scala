@@ -30,5 +30,5 @@ object Equality extends App {
   assert(null eq null)
 
   assert(Array(1, 2) != Array(1, 2))
-  assert(Array(1, 2) sameElements  Array(1, 2))
+  assert(Array(1, 2) sameElements Array(1, 2))
 }

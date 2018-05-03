@@ -27,5 +27,4 @@ object Trys extends App {
   } yield i1 + i2 + i3 + i4
   assert(result2.isInstanceOf[Failure[Int]])
 
-
 }

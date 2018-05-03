@@ -21,7 +21,9 @@ object SimpleStateSalesTax {
   implicit val rate: Float = 0.05F
 }
 
-case class ComplicatedSalesTaxData(baseRate: Float, isTaxHoliday: Boolean, storeId: Int)
+case class ComplicatedSalesTaxData(baseRate: Float,
+                                   isTaxHoliday: Boolean,
+                                   storeId: Int)
 
 object ComplicatedSalesTax {
   private def extraTaxRatesForStore(id: Int): Float = {
@@ -29,6 +31,7 @@ object ComplicatedSalesTax {
   }
   //隐式方法不能有参数除了隐式参数
   implicit def rate(implicit cstd: ComplicatedSalesTaxData): Float = {
-    if (cstd.isTaxHoliday) 0.0F else cstd.baseRate + extraTaxRatesForStore(cstd.storeId)
+    if (cstd.isTaxHoliday) 0.0F
+    else cstd.baseRate + extraTaxRatesForStore(cstd.storeId)
   }
 }

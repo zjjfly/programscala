@@ -32,11 +32,11 @@ object Either extends App {
 
   //Either是抛出异常的一种替代方案，使我们保持对调用栈的控制
   //它还可以使得用户自己的API的行为更加明显,通过方法签名就可以看出
-  def addInt(s1:String,s2:String): Either[NumberFormatException, Int] ={
+  def addInt(s1: String, s2: String): Either[NumberFormatException, Int] = {
     try {
-      Right(s1.toInt+s2.toInt)
-    }catch {
-      case nfe:NumberFormatException=>Left(nfe)
+      Right(s1.toInt + s2.toInt)
+    } catch {
+      case nfe: NumberFormatException => Left(nfe)
     }
   }
 }

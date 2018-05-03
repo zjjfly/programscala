@@ -15,7 +15,8 @@ object GoodOODesign extends App {
 
   case class Person(name: String,
                     age: Option[Int] = None,
-                    address: Option[Address] = None) extends PersonState
+                    address: Option[Address] = None)
+      extends PersonState
 
   trait EmployeeState {
     val title: String
@@ -26,6 +27,8 @@ object GoodOODesign extends App {
                       age: Option[Int] = None,
                       address: Option[Address] = None,
                       title: String = "[unknown]",
-                      manager: Option[Employee] = None) extends PersonState with EmployeeState
+                      manager: Option[Employee] = None)
+      extends PersonState
+      with EmployeeState
 
 }

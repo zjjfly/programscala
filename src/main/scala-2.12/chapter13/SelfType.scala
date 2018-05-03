@@ -31,7 +31,7 @@ object SelfType extends App {
 
   trait App {
     self: Persistence with Midtier with UI =>
-    def run() = {
+    def run(): Unit = {
       startPersistence()
       startMidtier()
       startUI()
@@ -42,18 +42,18 @@ object SelfType extends App {
   MyApp.run()
 
   val c1 = new C1
-  c1.talk ("Hello")
-  c1.c2.c3.talk ("World")
+  c1.talk("Hello")
+  c1.c2.c3.talk("World")
 }
 
 class C1 {
   outer =>
-  def talk(message: String) = println("C1.talk: " + message)
+  def talk(message: String): Unit = println("C1.talk: " + message)
 
   class C2 {
 
     class C3 {
-      def talk(message: String) = outer.talk("C3.talk: " + message) //
+      def talk(message: String): Unit = outer.talk("C3.talk: " + message) //
     }
 
     val c3 = new C3

@@ -30,7 +30,8 @@ object for_xxx extends App {
     c <- elem
     if c.isLower
   } yield s"$c-${c.toUpper}"
-  assert(states3 == states.flatMap(_.toSeq withFilter (_.isLower) map (c => s"$c-${c.toUpper}")))
+  assert(states3 == states.flatMap(_.toSeq withFilter (_.isLower) map (c =>
+    s"$c-${c.toUpper}")))
 
   for {
     s <- states

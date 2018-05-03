@@ -10,20 +10,21 @@ object StructuralType extends App {
     import scala.language.reflectiveCalls
 
     type State
-    type Observer = {def receiveUpdate(state: Any): Unit}
+    type Observer = { def receiveUpdate(state: Any): Unit }
     private var observers: List[Observer] = Nil
 
     def addObserver(observer: Observer): Unit = observers ::= observer
 
-    def notifyObservers(state: State): Unit = observers foreach (_.receiveUpdate(state))
+    def notifyObservers(state: State): Unit =
+      observers foreach (_.receiveUpdate(state))
   }
   val subject = new Subject {
 
-    type State=Int
+    type State = Int
 
-    protected var count=0
+    protected var count = 0
 
-    def increment():Unit={
+    def increment(): Unit = {
 
       count += 1
 
@@ -31,7 +32,6 @@ object StructuralType extends App {
     }
 
   }
-
 
   trait SubjectFunc {
     type State

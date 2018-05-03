@@ -7,15 +7,16 @@ object NestedTypes extends App {
 
   object Database {
 
-    case class ResultSet(/*...*/)
+    case class ResultSet( /*...*/ )
 
-    case class Connection(/*...*/)
+    case class Connection( /*...*/ )
 
-    case class DatabaseException(message: String, cause: Throwable) extends RuntimeException(message, cause)
+    case class DatabaseException(message: String, cause: Throwable)
+        extends RuntimeException(message, cause)
 
     sealed trait Status
 
-    case object Disconnected extends Status//当case类没有任何字段代表额外的状态信息时，考虑使用case object
+    case object Disconnected extends Status //当case类没有任何字段代表额外的状态信息时，考虑使用case object
 
     case class Connected(connection: Connection) extends Status
 
@@ -29,11 +30,12 @@ object NestedTypes extends App {
 
     import Database._
 
-    def connect(server: String): Status = ??? //???实际上是一个方法，定义在Predef中。它只是简单的抛出一个异常，用于标记方法还没有实现
+    def connect(server: String): Status =
+      ??? //???实际上是一个方法，定义在Predef中。它只是简单的抛出一个异常，用于标记方法还没有实现
 
     def disconnect(): Status = ???
 
-    def query(/*...*/): Status = ???
+    def query( /*...*/ ): Status = ???
   }
 
   case object Foo

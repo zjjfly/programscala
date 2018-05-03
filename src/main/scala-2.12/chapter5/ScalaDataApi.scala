@@ -10,12 +10,16 @@ package scaladb {
   object implicits {
 
     implicit class SRow(jRow: JRow) {
-      def get[T](colName: String)(implicit toT: (JRow, String) => T): T = toT(jRow, colName)
+      def get[T](colName: String)(implicit toT: (JRow, String) => T): T =
+        toT(jRow, colName)
     }
     //下面的三个隐式值限定了get[T]方法的T只能是Int,Double和String
-    implicit val jrowToInt: (JRow, String) => Int = (jrow: JRow, colName: String) => jrow.getInt(colName)
-    implicit val jrowToDouble: (JRow, String) => Double = (jrow: JRow, colName: String) => jrow.getDouble(colName)
-    implicit val jrowToString: (JRow, String) => String = (jrow: JRow, colName: String) => jrow.getText(colName)
+    implicit val jrowToInt: (JRow, String) => Int =
+      (jrow: JRow, colName: String) => jrow.getInt(colName)
+    implicit val jrowToDouble: (JRow, String) => Double =
+      (jrow: JRow, colName: String) => jrow.getDouble(colName)
+    implicit val jrowToString: (JRow, String) => String =
+      (jrow: JRow, colName: String) => jrow.getText(colName)
   }
 
 }
@@ -32,8 +36,8 @@ object DB {
     println(s"one1 -> $oneValue1")
     println(s"two1 -> $twoValue1")
     println(s"three1 -> $threeValue1")
-    val oneValue2= row.get[Int]("one")
-    val twoValue2= row.get[Double]("two")
+    val oneValue2 = row.get[Int]("one")
+    val twoValue2 = row.get[Double]("two")
     val threeValue2 = row.get[String]("three")
     println(s"one2 -> $oneValue2")
     println(s"two2 -> $twoValue2")

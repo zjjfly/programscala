@@ -3,13 +3,13 @@ package chapter6
 /**
   * Created by zjjfly on 2017/3/24.
   */
-object Tupled extends App{
+object Tupled extends App {
 
-  val d3 = (2.2,3.3,4.4)
+  val d3 = (2.2, 3.3, 4.4)
 
   def mult(d1: Double, d2: Double, d3: Double): Double = d1 * d2 * d3
 
-  val multTupled = Function.tupled(mult _)//为了消除歧义，要加_
+  val multTupled = Function.tupled(mult _) //为了消除歧义，要加_
 
   println(multTupled(d3))
 

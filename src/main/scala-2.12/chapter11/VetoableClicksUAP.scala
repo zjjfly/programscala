@@ -7,7 +7,7 @@ import chapter9.ui2.{Button, Clickable, ObservableClicks}
   * Created by zjjfly on 2017/4/25.
   */
 trait VetoableClicksUAP extends Clickable {
-  def maxAllowed:Int = 1
+  def maxAllowed: Int = 1
   private var count = 0
 
   abstract override def click(): Unit = {
@@ -25,7 +25,8 @@ class ClickCountObserver extends Observer[Clickable] {
 }
 
 object VetoableClicksUAP extends App {
-  val button = new Button("Click Me!") with ObservableClicks with VetoableClicksUAP {
+  val button = new Button("Click Me!") with ObservableClicks
+  with VetoableClicksUAP {
     override val maxAllowed = 2
   }
   val bco1 = new ClickCountObserver

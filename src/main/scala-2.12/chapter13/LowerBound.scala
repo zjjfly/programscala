@@ -32,7 +32,7 @@ object LowerBound extends App {
   //    def getOrElse(default: A) = if (value != null) value else default
   //  }
   case class Opt[A](value: A = null) {
-    def getOrElse(default: A) = if (value != null) value else default
+    def getOrElse(default: A): A = if (value != null) value else default
   }
 
   //下面的代码无法编译，因为Opt[Child]调用getOrElse返回的只能是Child类型
@@ -40,8 +40,8 @@ object LowerBound extends App {
   //  val p5:Parent=Opt[Child](null).getOrElse(Parent(10))
 
   val list = List(1, 2)
-  val l1=3.0 +: list//这行代码编译的时候会警告，因为推断的类型是一个比原来更宽的类型
-  val l2: List[AnyVal] = 3.0 +: list//显式的加上类型就不会有警告
+  val l1 = 3.0 +: list //这行代码编译的时候会警告，因为推断的类型是一个比原来更宽的类型
+  val l2: List[AnyVal] = 3.0 +: list //显式的加上类型就不会有警告
 
   class Upper
 
@@ -53,7 +53,7 @@ object LowerBound extends App {
 
   case class C[A >: Lower <: Upper](a: A)
 
-  class Y{
-    type Z=Int
+  class Y {
+    type Z = Int
   }
 }

@@ -30,7 +30,9 @@ object Observer extends App {
     }
   }
 
-  class ObservableButton(name: String) extends Button(name) with Subject[Button] {
+  class ObservableButton(name: String)
+      extends Button(name)
+      with Subject[Button] {
     override def click(): Unit = {
       super.click()
       notifyObservers(this)
@@ -52,7 +54,7 @@ object Observer extends App {
   button.addObserver(bco1)
   button.addObserver(bco2)
   (1 to 5) foreach (_ => button.click())
-  assert(bco1.count==5)
-  assert(bco2.count==5)
+  assert(bco1.count == 5)
+  assert(bco2.count == 5)
 
 }

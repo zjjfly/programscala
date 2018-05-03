@@ -5,8 +5,12 @@ package Chapter3
   */
 object For {
   def main(args: Array[String]): Unit = {
-    var dogBreeds = List("Doberman", "Yorkshire Terrier", "Dachshund",
-      "Scottish Terrier", "Great Dane", "Portuguese Water Dog")
+    var dogBreeds = List("Doberman",
+                         "Yorkshire Terrier",
+                         "Dachshund",
+                         "Scottish Terrier",
+                         "Great Dane",
+                         "Portuguese Water Dog")
     //一般的for循环
     for (breed <- dogBreeds)
       println(breed)
@@ -14,8 +18,7 @@ object For {
     println("filter:")
     for (breed <- dogBreeds
          if breed.contains("Terrier")
-         if !breed.startsWith("Yorkshire")
-    ) println(breed)
+         if !breed.startsWith("Yorkshire")) println(breed)
 
     //yield
     val filteredBreeds: List[String] = for {
@@ -30,8 +33,15 @@ object For {
     } println(upcasedBreed)
 
     //和Option搭配使用
-    val dogBreed = List(Some("Doberman"), None, Some("Yorkshire Terrier"), Some("Dachshund"), None, Some("Scottish Terrier"),
-      None, Some("Great Dane"), Some("Portuguese Water Dog"))
+    val dogBreed = List(Some("Doberman"),
+                        None,
+                        Some("Yorkshire Terrier"),
+                        Some("Dachshund"),
+                        None,
+                        Some("Scottish Terrier"),
+                        None,
+                        Some("Great Dane"),
+                        Some("Portuguese Water Dog"))
     println("first pass:")
     for {
       breedOption <- dogBreed

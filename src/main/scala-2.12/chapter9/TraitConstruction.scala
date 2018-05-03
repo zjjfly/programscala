@@ -3,7 +3,7 @@ package chapter9
 /**
   * Created by zjjfly on 2017/4/17.
   */
-object TraitConstruction extends App{
+object TraitConstruction extends App {
 
   trait T1 {
     println(s" in T1: x = $x")

@@ -9,13 +9,12 @@ case class CLINQ[T](records: Seq[Map[String, T]]) extends Dynamic {
     else {
       val fields = name.split("_and_")
       val seed = Seq.empty[Map[String, T]]
-      val newRecords = (records foldLeft seed) {
-        (results, record) =>
-          val projection = record.filter {
-                                           case (key, value) => fields contains key
-                                         }
-          if (projection.size > 0) results :+ projection
-          else results
+      val newRecords = (records foldLeft seed) { (results, record) =>
+        val projection = record.filter {
+          case (key, _) => fields contains key
+        }
+        if (projection.nonEmpty) results :+ projection
+        else results
       }
       CLINQ(newRecords)
     }
@@ -23,7 +22,7 @@ case class CLINQ[T](records: Seq[Map[String, T]]) extends Dynamic {
 
   def applyDynamic(name: String)(field: String): Where = name match {
     case "where" => new Where(field)
-    case _ => throw CLINQ.BadOperation(field, """Expected "where".""")
+    case _       => throw CLINQ.BadOperation(field, """Expected "where".""")
   }
 
   protected class Where(field: String) extends Dynamic {
@@ -39,7 +38,7 @@ case class CLINQ[T](records: Seq[Map[String, T]]) extends Dynamic {
     def applyDynamic(op: String)(value: T): CLINQ[T] = op match {
       case "EQ" => filter(value)(_ == _) //
       case "NE" => filter(value)(_ != _) //
-      case _ => throw CLINQ.BadOperation(field, """Expected "EQ" or "NE".""")
+      case _    => throw CLINQ.BadOperation(field, """Expected "EQ" or "NE".""")
     }
 
     override def toString: String = records mkString "\n"
@@ -49,19 +48,23 @@ case class CLINQ[T](records: Seq[Map[String, T]]) extends Dynamic {
 
 object CLINQ {
 
-  case class BadOperation(name: String, msg: String) extends RuntimeException(
-    s"Unrecognized operation $name. $msg")
+  case class BadOperation(name: String, msg: String)
+      extends RuntimeException(s"Unrecognized operation $name. $msg")
 
   def main(args: Array[String]): Unit = {
-    def makeMap(name: String, capital: String, statehood: Int): Map[String, Any] = Map("name" -> name, "capital" -> capital,
-                                                                                       "statehood" -> statehood)
+    def makeMap(name: String,
+                capital: String,
+                statehood: Int): Map[String, Any] =
+      Map("name" -> name, "capital" -> capital, "statehood" -> statehood)
 
-    val states = CLINQ(List(
-      makeMap("Alaska", "Juneau", 1959),
-      makeMap("California", "Sacramento", 1850),
-      makeMap("Illinois", "Springfield", 1818),
-      makeMap("Virginia", "Richmond", 1788),
-      makeMap("Washington", "Olympia", 1889)))
+    val states = CLINQ(
+      List(
+        makeMap("Alaska", "Juneau", 1959),
+        makeMap("California", "Sacramento", 1850),
+        makeMap("Illinois", "Springfield", 1818),
+        makeMap("Virginia", "Richmond", 1788),
+        makeMap("Washington", "Olympia", 1889)
+      ))
     println(states.name)
     println(states.capital)
     println(states.statehood)

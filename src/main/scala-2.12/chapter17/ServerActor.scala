@@ -1,8 +1,14 @@
 package chapter17
 
-import java.util.concurrent.TimeUnit
-
-import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, OneForOneStrategy, Props, SupervisorStrategy}
+import akka.actor.{
+  Actor,
+  ActorLogging,
+  ActorRef,
+  ActorSystem,
+  OneForOneStrategy,
+  Props,
+  SupervisorStrategy
+}
 import akka.util.Timeout
 
 import scala.concurrent.Future
@@ -28,11 +34,11 @@ class ServerActor extends Actor with ActorLogging {
   override def supervisorStrategy: SupervisorStrategy = {
     val decider: SupervisorStrategy.Decider = {
       case WorkerActor.CrashException => SupervisorStrategy.restart
-      case NonFatal(_) => SupervisorStrategy.Resume
+      case NonFatal(_)                => SupervisorStrategy.Resume
     }
     OneForOneStrategy() {
-                          decider orElse super.supervisorStrategy.decider
-                        }
+      decider orElse super.supervisorStrategy.decider
+    }
   }
 
   var workers: immutable.Seq[ActorRef] = Vector.empty[ActorRef]
@@ -43,32 +49,37 @@ class ServerActor extends Actor with ActorLogging {
       context become processRequest
   }
   val processRequest: Receive = {
-    case c@Crash(n) => workers(n % workers.size) ! c
+    case c @ Crash(n) => workers(n % workers.size) ! c
     case DumpAll =>
-      val futures= workers.map(_ ? DumpAll)
-      Future.foldLeft(futures)(Vector.empty[Any])(_ :+ _).onComplete(askHandler(s"State of workers"))
+      val futures = workers.map(_ ? DumpAll)
+      Future
+        .foldLeft(futures)(Vector.empty[Any])(_ :+ _)
+        .onComplete(askHandler(s"State of workers"))
     case Dump(n) =>
-      (workers(n % workers.size) ? DumpAll).map(Vector(_)).onComplete(askHandler(s"State of worker $n"))
+      (workers(n % workers.size) ? DumpAll)
+        .map(Vector(_))
+        .onComplete(askHandler(s"State of worker $n"))
     case request: Request =>
       val key = request.key.toInt
       val index = key % workers.size
       workers(index) ! request
     case Response(Success(message)) => printResult(message)
-    case Response(Failure(ex)) => printResult(s"ERROR! ex")
+    case Response(Failure(ex))      => printResult(s"ERROR! ex")
   }
 
   def askHandler(prefix: String): PartialFunction[Try[Any], Unit] = {
-    case Success(suc) => suc match {
-      case vect: Vector[_] =>
-        printResult(s"prefix:\n")
-        vect foreach {
-          case Response(Success(message)) =>
-            printResult(s"$message")
-          case Response(Failure(ex)) =>
-            printResult(s"ERROR! Success received wrapping $ex")
-        }
-      case _ => printResult(s"BUG! Expected a vector,got $suc")
-    }
+    case Success(suc) =>
+      suc match {
+        case vect: Vector[_] =>
+          printResult(s"prefix:\n")
+          vect foreach {
+            case Response(Success(message)) =>
+              printResult(s"$message")
+            case Response(Failure(ex)) =>
+              printResult(s"ERROR! Success received wrapping $ex")
+          }
+        case _ => printResult(s"BUG! Expected a vector,got $suc")
+      }
     case Failure(ex) => printResult(s"ERROR! $ex")
   }
 

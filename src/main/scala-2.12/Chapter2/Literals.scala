@@ -17,7 +17,7 @@ object Literals {
     println(s1)
     //如果想要去掉前缀和后缀,可以使用下面这种方法,但只去掉整个字符串的首尾,不是单独每一行的
     val s2 =
-    """xxxGoodbye, Scalayyy
+      """xxxGoodbye, Scalayyy
         xxxCome again!yyy""".stripPrefix("xxx").stripSuffix("yyy")
     println(s2)
     val i = 'id
