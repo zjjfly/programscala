@@ -20,10 +20,10 @@ object FunctionVariance extends App {
     def msub() = println("CSub")
   }
 
-  typeOf[C => C] =:= typeOf[C => C]
-  typeOf[CSuper => CSub] =:= typeOf[C => C]
-  typeOf[CSub => CSuper] =:= typeOf[C => C]
-  typeOf[C => C] <:< typeOf[C => C]
-  typeOf[CSuper => CSub] <:< typeOf[C => C]
-  typeOf[CSub => CSuper] <:< typeOf[C => C]
+  println(typeOf[C => C] =:= typeOf[C => C])
+  println(typeOf[CSuper => CSub] =:= typeOf[C => C])
+  println(typeOf[CSub => CSuper] =:= typeOf[C => C])
+  println(typeOf[C => C] <:< typeOf[C => C])
+  println(typeOf[CSuper => CSub] <:< typeOf[C => C])
+  println(typeOf[CSub => CSuper] <:< typeOf[C => C])
 }

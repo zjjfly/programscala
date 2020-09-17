@@ -10,7 +10,7 @@ object Quasiquotes extends App {
   val C = q"case class C(s:String)"
   println(C)
   println(showCode(C)) //打印原始的声明语法
-  println(showRaw(C))
+  println(showRaw(C)) //打印语法树
   //打印类型树
   val q = q"List[String]"
   val tq = tq"List[String]"
@@ -23,13 +23,14 @@ object Quasiquotes extends App {
     println(showCode(q))
   }
 
-  val list = Seq(1,2,3,4)
+  val list = Seq(1, 2, 3, 4)
 
   val fmt = "%d, %d, %d, %d"
 
-  val printq = q"println($fmt, ..$list)"//..$list会把list展开成逗号分隔的值
-  println(printq)//println("%d, %d, %d, %d", 1, 2, 3, 4)
-  val q"${i:Int} + ${d:Double}"=q"1 + 3.14"
-  println(i+","+d)
+  val printq = q"println($fmt, ..$list)" //..$list会把list展开成逗号分隔的值
+  println(printq) //println("%d, %d, %d, %d", 1, 2, 3, 4)
+  //模式匹配
+  val q"${i: Tree} + ${d: Tree}" = q"1 + 3.14"
+  println(i + "," + d)
 
 }
