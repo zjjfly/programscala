@@ -1,7 +1,5 @@
 package com.github.zjjfly.ps.chapter5
 
-import javafx.scene.effect.FloatMap
-
 /**
   * Created by zjjfly on 2017/3/13.
   */
