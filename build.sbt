@@ -1,4 +1,4 @@
-name := "ProgramScala"
+name := "program-scala"
 
 version := "1.0"
 
